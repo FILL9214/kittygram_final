@@ -5,7 +5,6 @@ COPY . .
 
 RUN npm ci
 
-RUN npm run build \
-    npm install --global http-server
+RUN npm run build && npm install --global http-server
 
 CMD ["npx", "-y", "http-server", "-p", "8000", "/app/build"]
