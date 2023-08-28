@@ -32,21 +32,21 @@ nano docker-compose.yml
 ....
 backend:
    ...
-   # эту строку строку ниже:
+   # эту строку ниже:
    image: <username>/kittygram_backend
    # заменить на:
    build: ./backend/
    ...
 frontend:
    ...
-   # эту строку строку ниже:
+   # эту строку ниже:
    image: <username>/kittygram_frontend
    # заменить на:
    build: ./frontend/
    ...
 gateway:
    ...
-   # эту строку строку ниже:
+   # эту строку ниже:
    image: <username>/kittygram_gateway
    # заменить на:
    build: ./nginx/
@@ -74,9 +74,9 @@ docker compose exec backend cp -r /kittygram/collect_static/. /backend_static/st
 
 Настроить Ваш сервер на отпраку запросов к сайту Kittygram на порт 9000 (согласно настройке образа `gateway`).
    
-### 2. Создания CI/CD на GitHub Actions
+### 2. Создание CI/CD на GitHub Actions
 
-Создать в корне проекта скрытую директиву для размещения файла с интсрукциями для GitHub Actions:
+Создать в корне проекта скрытую директиву для размещения файла с инструкциями для GitHub Actions:
 
 ```
 mkdir .github/workflows
@@ -107,6 +107,7 @@ mv kittygram_workflow.yml ./.github/workflows/kittygram_workflow.yml
 - автоматически обновятся контейнеры
 - контейнеры отправятся на DockerHub
 - контейнеры скачаются с DockerHub на сервер и перезапустятся
+- отправится уведомление пользователю через TelegramBot об успешном деплое на сервер
 
 ___
 
